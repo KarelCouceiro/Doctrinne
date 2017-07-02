@@ -48,11 +48,14 @@ fars_read <- function(filename) {
 #'
 #'@export
 
+year<-1999
 
 make_filename <- function(year) {
   year <- as.integer(year)
   sprintf("accident_%d.csv.bz2", year)
 }
+
+make_filename(1999)
 
 #'Data List By Year
 #'
