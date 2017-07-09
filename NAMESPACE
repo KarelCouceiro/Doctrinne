@@ -1,1 +1,5 @@
-exportPattern("^[[:alpha:]]+")
+export("Doctrine")
+import(readr)
+import(dplyr)
+import(tidyr)
+import(maps)
