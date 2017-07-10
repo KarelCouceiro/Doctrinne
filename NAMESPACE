@@ -1,4 +1,10 @@
-export("Doctrine")
+export(make_filename)
+export(fars_read)
+export(make_filename)
+export(fars_read_years)
+export(fars_read)
+
+
 import(readr)
 import(dplyr)
 import(tidyr)
