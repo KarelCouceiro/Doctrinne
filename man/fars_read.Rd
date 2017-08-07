@@ -6,9 +6,20 @@
 \usage{
 fars_read(filename)
 }
+\arguments{
+\item{filename}{It is the input of the function, consisting of a string}
+}
 \value{
 And then, it is converted as a dataframe (final output) through the function
 }
 \description{
-Reads data and output a dataframe
+The function \code{fars_read} takes as argument a given file (assuming it is in the working directory)
+and check if exist. If it cannot be located, then the function retrieves the message
+that the file does not exist. Otherwise, reads it through the external package \code{readr}
+assigning it the name data, not displaying the loading progress (progress false) or
+any other message (suppressMessages).
+}
+\examples{
+\dontrun{fars_read()}
+
 }

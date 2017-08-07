@@ -6,8 +6,12 @@
 \usage{
 fars_read_years(years)
 }
+\arguments{
+\item{years}{It is the input of the function, consisting of ideally integers in order to specify correct files.
+If a string is entered, an error can appear}
+}
 \value{
-A subset of a dataframe (final output) is retrieved.
+A subset of a dataframe (final output) is retrieved
 }
 \description{
 This function retrieves a list consisting of datasets.
@@ -23,4 +27,8 @@ the variable year to the dataset.
 \note{
 In case of error, no data is retrieved
 and the message invalid year is displayed.
+}
+\examples{
+\dontrun{fars_read_years()}
+
 }

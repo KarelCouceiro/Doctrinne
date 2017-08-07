@@ -6,6 +6,10 @@
 \usage{
 fars_summarize_years(years)
 }
+\arguments{
+\item{years}{It is the input of the function, consisting of ideally integers in order to specify correct files.
+If a string is entered, an error can appear}
+}
 \value{
 A summary of a dataframe as a table is retrieved
 }
@@ -18,4 +22,8 @@ counts the number of occurrences stratified by month and year thanks
 to the function \code{group_by}. Finally, it is created a contingency table
 thanks to the package \code{tidyr}, which displays in a better the summary
 data (number of observations by year and moth)
+}
+\examples{
+\dontrun{fars_summarize_years()}
+
 }

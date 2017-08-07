@@ -6,6 +6,15 @@
 \usage{
 fars_map_state(state.num, year)
 }
+\arguments{
+\item{state.num}{It is the input of the function, consisting of ideally integers in order to specify correct files
+and subsets.
+If a string is entered, an error can appear}
+
+\item{year}{It is the input of the function, consisting of ideally integers in order to specify correct files
+and subsets.
+If a string is entered, an error can appear}
+}
 \value{
 Finally, a plot is retrieved
 }
@@ -24,4 +33,8 @@ latitude, this time if values are higher than 90. Finally, a map
 is produced thanks to the package \code{maps} and points specified by
 the dataset are placed in it thanks to the package \code{graphics}
 and the function \code{points}.
+}
+\examples{
+\dontrun{fars_map_state()}
+
 }

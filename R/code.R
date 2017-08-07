@@ -1,9 +1,7 @@
 
 #'Reads data and output a dataframe
 #'
-#'@parameter \code{filename}. It is the input of the function, consisting of a string
-#'
-#'The function \code{fars_read} takes as argument a given file (assuming it is in the working directory)
+#'@description The function \code{fars_read} takes as argument a given file (assuming it is in the working directory)
 #'and check if exist. If it cannot be located, then the function retrieves the message
 #'that the file does not exist. Otherwise, reads it through the external package \code{readr}
 #'assigning it the name data, not displaying the loading progress (progress false) or
@@ -11,10 +9,13 @@
 #'
 #'@return And then, it is converted as a dataframe (final output) through the function
 #'
-#'@importFrom \code{tbl_df} from package \code{dplyr}. The function \code{read_csv}
-#'is as well externally downloaded from the package \code{readr}
+#'@param filename It is the input of the function, consisting of a string
 #'
-#'@example \code{fars_read("accident.csv")}
+#'@importFrom "dplyr" "tbl_df"
+#'
+#'@importFrom "readr" "read_csv"
+#'
+#'@examples \dontrun{fars_read()}
 #'
 #'@export
 
@@ -30,11 +31,11 @@ fars_read <- function(filename) {
 
 #'Creates a file name
 #'
-#'The function \code{make_filename} takes as argument a number
+#'@description The function \code{make_filename} takes as argument a number
 #'(it should be a number otherwise an error could appear), it is converted to
 #'integer.
 #'
-#'@parameter \code{year}. It is the input of the function, consisting of an ideally integer in order to specify a correct file.
+#'@param year It is the input of the function, consisting of an ideally integer in order to specify a correct file.
 #'If a string is entered, an error can appear.
 #'
 #'@return the function retrieves a long string indicating the name
@@ -44,22 +45,20 @@ fars_read <- function(filename) {
 #'with the previous function it can accomplish in a handy way the import of
 #'datasets, just entering a given number as input.
 #'
-#'@example \code{make_filename(1997)}
+#'@examples \dontrun{make_filename()}
 #'
 #'@export
-
-year<-1999
 
 make_filename <- function(year) {
   year <- as.integer(year)
   sprintf("accident_%d.csv.bz2", year)
 }
 
-make_filename(1999)
+year<-1999
 
 #'Data List By Year
 #'
-#'This function retrieves a list consisting of datasets.
+#'@description This function retrieves a list consisting of datasets.
 #'It uses the previously described functions (\code{make_filename}, \code{fars_read})
 #'while it is inserted an error handler. This time it allows inputting
 #'a vector thanks to the function \code{lapply} (for each element of the vector,
@@ -69,18 +68,19 @@ make_filename(1999)
 #'to select a given subset through the external package \code{dplyr}, adding
 #'the variable year to the dataset.
 #'
-#'@parameter \code{years} It is the input of the function, consisting of ideally integers in order to specify correct files.
+#'@param years It is the input of the function, consisting of ideally integers in order to specify correct files.
 #'If a string is entered, an error can appear
 #'
 #'@note In case of error, no data is retrieved
 #'and the message invalid year is displayed.
 #'
-#'@importFrom External functions \code{mutate} and \code{select} are used
-#'from the package \code{dplyr}
+#'@importFrom "dplyr" "mutate"
 #'
-#'@return A subset of a dataframe (final output) is retrieved.
+#'@importFrom "dplyr" "select"
 #'
-#'@example \code{fars_read_years(c(1997,1998,1999))}
+#'@return A subset of a dataframe (final output) is retrieved
+#'
+#'@examples \dontrun{fars_read_years()}
 #'
 #'@export
 
@@ -100,7 +100,7 @@ fars_read_years <- function(years) {
 
 #'Summary of the dataset
 #'
-#'This function first uses the already described one, \code{fars_read_years}.
+#'@description This function first uses the already described one, \code{fars_read_years}.
 #'Using the external package \code{dplyr}, first bind the provided list into
 #'a compact dataset with the function \code{bind_rows}. And creates a summary
 #'dataset thanks to the function \code{summarize}, using the function \code{n()} which
@@ -109,21 +109,18 @@ fars_read_years <- function(years) {
 #'thanks to the package \code{tidyr}, which displays in a better the summary
 #'data (number of observations by year and moth)
 #'
-#'@parameter \code{years} It is the input of the function, consisting of ideally integers in order to specify correct files.
+#'@param years It is the input of the function, consisting of ideally integers in order to specify correct files.
 #'If a string is entered, an error can appear
 #'
-#'@importFrom This chunk of code relies heavly on external
-#'functions such \code{bind_rows},  \code{group_by},
-#'\code{summarize} from the package \code{dplyr}. And
-#'\code{spread} from the package \code{tidyr}
+#'@importFrom "dplyr" "bind_rows" "group_by" "summarize"
 #'
+#'@importFrom "tidyr" "spread"
 #'
 #'@return A summary of a dataframe as a table is retrieved
 #'
-#'@example \code{fars_summarize_years(c(1997,1998,1999))}
+#'@examples \dontrun{fars_summarize_years()}
 #'
 #'@export
-#'
 
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
@@ -135,7 +132,7 @@ fars_summarize_years <- function(years) {
 
 #'Create a graphical map with the dataset
 #'
-#'This function draws a map of USA and places in it certain points
+#'@description This function draws a map of USA and places in it certain points
 #'defined in the dataset. In order to accomplish this task, it is
 #'created a function which takes two arguments as inputs, they
 #'should be numeric values otherwise an error can be retrieved
@@ -150,18 +147,21 @@ fars_summarize_years <- function(years) {
 #'the dataset are placed in it thanks to the package \code{graphics}
 #'and the function \code{points}.
 #'
-#'@parameter \code{state.num, year} It is the input of the function, consisting of ideally integers in order to specify correct files
+#'@param state.num It is the input of the function, consisting of ideally integers in order to specify correct files
 #'and subsets.
 #'If a string is entered, an error can appear
 #'
-#'@importFrom This chunk of code relies heavly on external
-#'functions such \code{map} from the package \code{maps}.
-#' And \code{points} from the package \code{graphics}
+#'@param year It is the input of the function, consisting of ideally integers in order to specify correct files
+#'and subsets.
+#'If a string is entered, an error can appear
 #'
+#'@importFrom "maps" "map"
+#'
+#'@importFrom "graphics" "points"
 #'
 #'@return Finally, a plot is retrieved
 #'
-#'@example \code{fars_map_state(12,1999)}
+#'@examples \dontrun{fars_map_state()}
 #'
 #'@export
 
@@ -186,17 +186,4 @@ fars_map_state <- function(state.num, year) {
     graphics::points(LONGITUD, LATITUDE, pch = 46)
   })
 }
-
-#'impo
-#'
-#'
-#'
-#'
-#'
-
-
-
-
-
-
 
