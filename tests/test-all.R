@@ -1,4 +1,5 @@
-library(testthat)
+
 library(Doctrine)
+library(testthat)
 
 test_check("Doctrine")
