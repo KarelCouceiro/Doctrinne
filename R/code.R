@@ -187,10 +187,12 @@ fars_map_state <- function(state.num, year) {
   })
 }
 
-#' @import readr
-#' @import dplyr
-#' @import tidyr
-#' @import maps
+#'impo
+#'
+#'
+#'
+#'
+#'
 
 
 
