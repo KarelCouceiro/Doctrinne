@@ -20,6 +20,7 @@
 #'@export
 
 
+
 fars_read <- function(filename) {
   if(!file.exists(filename))
     stop("file '", filename, "' does not exist")
@@ -48,6 +49,8 @@ fars_read <- function(filename) {
 #'@examples \dontrun{make_filename()}
 #'
 #'@export
+
+
 
 make_filename <- function(year) {
   year <- as.integer(year)
@@ -78,11 +81,14 @@ year<-1999
 #'
 #'@importFrom "dplyr" "select"
 #'
+#'
 #'@return A subset of a dataframe (final output) is retrieved
 #'
 #'@examples \dontrun{fars_read_years()}
 #'
 #'@export
+
+
 
 fars_read_years <- function(years) {
   lapply(years, function(year) {
@@ -116,11 +122,14 @@ fars_read_years <- function(years) {
 #'
 #'@importFrom "tidyr" "spread"
 #'
+#'
 #'@return A summary of a dataframe as a table is retrieved
 #'
 #'@examples \dontrun{fars_summarize_years()}
 #'
 #'@export
+
+
 
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
@@ -164,6 +173,7 @@ fars_summarize_years <- function(years) {
 #'@examples \dontrun{fars_map_state()}
 #'
 #'@export
+
 
 
 fars_map_state <- function(state.num, year) {
