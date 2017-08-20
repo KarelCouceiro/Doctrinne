@@ -52,8 +52,6 @@ fars_read <- function(filename) {
 #'
 #'@export
 
-
-
 make_filename <- function(year) {
   year <- as.integer(year)
   sprintf("accident_%d.csv.bz2", year)
@@ -92,9 +90,8 @@ year<-1999
 #'
 #'@export
 
-
-
 fars_read_years <- function(years) {
+  MONTH<-NULL
   lapply(years, function(year) {
     file <- make_filename(year)
     tryCatch({
@@ -107,6 +104,8 @@ fars_read_years <- function(years) {
     })
   })
 }
+
+
 
 #'Summary of the dataset
 #'
@@ -134,15 +133,16 @@ fars_read_years <- function(years) {
 #'
 #'@export
 
-
-
 fars_summarize_years <- function(years) {
+  MONTH<-NULL
   dat_list <- fars_read_years(years)
   dplyr::bind_rows(dat_list) %>%
     dplyr::group_by(year, MONTH) %>%
     dplyr::summarize(n = dplyr::n()) %>%
     tidyr::spread(year, n)
 }
+
+
 
 #'Create a graphical map with the dataset
 #'
@@ -179,9 +179,8 @@ fars_summarize_years <- function(years) {
 #'
 #'@export
 
-
-
 fars_map_state <- function(state.num, year) {
+  STATE<-NULL
   filename <- make_filename(year)
   data <- fars_read(filename)
   state.num <- as.integer(state.num)
