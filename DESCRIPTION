@@ -6,7 +6,7 @@ Title: US car accidents
 Version: 0.0.1
 Author: Karel Couceiro
 Encoding: UTF-8
-Maintainer: Karel Couceiro <Karel.Couceiro@some.domain.net>
+Maintainer: Karel Couceiro <Karel.Couceiro@gmail.com>
 Description: This package is intended to analyze display a dataset consisting of car accidents from the US National Highway Traffic Safety Administration?s Fatality Analysis Reporting System.
 License: GPL
 URL: https://github.com/KarelCouceiro/Directive
