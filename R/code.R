@@ -82,6 +82,8 @@ year<-1999
 #'@importFrom "dplyr" "select"
 #'
 #'
+#'
+#'
 #'@return A subset of a dataframe (final output) is retrieved
 #'
 #'@examples \dontrun{fars_read_years()}
@@ -121,6 +123,7 @@ fars_read_years <- function(years) {
 #'@importFrom "dplyr" "bind_rows" "group_by" "summarize"
 #'
 #'@importFrom "tidyr" "spread"
+#'
 #'
 #'
 #'@return A summary of a dataframe as a table is retrieved
