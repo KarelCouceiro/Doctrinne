@@ -1,7 +1,7 @@
 Package: Doctrine
 Type: Package
 Date: 01-07-2017
-Imports: readr, dplyr, tidyr, maps
+Imports: readr, dplyr, tidyr, maps, magrittr
 Title: US car accidents 
 Version: 0.0.1
 Author: Karel Couceiro

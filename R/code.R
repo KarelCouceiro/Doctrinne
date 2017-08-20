@@ -11,6 +11,8 @@
 #'
 #'@param filename It is the input of the function, consisting of a string
 #'
+#'@import magrittr
+#'
 #'@importFrom "dplyr" "tbl_df"
 #'
 #'@importFrom "readr" "read_csv"
@@ -81,7 +83,7 @@ year<-1999
 #'
 #'@importFrom "dplyr" "select"
 #'
-#'
+#'@import magrittr
 #'
 #'
 #'@return A subset of a dataframe (final output) is retrieved
@@ -124,7 +126,7 @@ fars_read_years <- function(years) {
 #'
 #'@importFrom "tidyr" "spread"
 #'
-#'
+#'@import magrittr
 #'
 #'@return A summary of a dataframe as a table is retrieved
 #'
