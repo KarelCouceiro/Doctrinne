@@ -1,4 +1,3 @@
-
 #'Reads data and output a dataframe
 #'
 #'@description The function \code{fars_read} takes as argument a given file (assuming it is in the working directory)
@@ -20,8 +19,6 @@
 #'@examples \dontrun{fars_read()}
 #'
 #'@export
-
-
 
 fars_read <- function(filename) {
   if(!file.exists(filename))
@@ -53,11 +50,13 @@ fars_read <- function(filename) {
 #'@export
 
 make_filename <- function(year) {
+
   year <- as.integer(year)
   sprintf("accident_%d.csv.bz2", year)
-}
 
-year<-1999
+}
+year<- NULL
+
 
 #'Data List By Year
 #'
@@ -105,8 +104,6 @@ fars_read_years <- function(years) {
   })
 }
 
-
-
 #'Summary of the dataset
 #'
 #'@description This function first uses the already described one, \code{fars_read_years}.
@@ -134,15 +131,14 @@ fars_read_years <- function(years) {
 #'@export
 
 fars_summarize_years <- function(years) {
-  MONTH<-NULL
+
   dat_list <- fars_read_years(years)
   dplyr::bind_rows(dat_list) %>%
     dplyr::group_by(year, MONTH) %>%
     dplyr::summarize(n = dplyr::n()) %>%
     tidyr::spread(year, n)
 }
-
-
+MONTH<-NULL
 
 #'Create a graphical map with the dataset
 #'
@@ -180,7 +176,7 @@ fars_summarize_years <- function(years) {
 #'@export
 
 fars_map_state <- function(state.num, year) {
-  STATE<-NULL
+
   filename <- make_filename(year)
   data <- fars_read(filename)
   state.num <- as.integer(state.num)
@@ -200,4 +196,4 @@ fars_map_state <- function(state.num, year) {
     graphics::points(LONGITUD, LATITUDE, pch = 46)
   })
 }
-
+STATE<-NULL
