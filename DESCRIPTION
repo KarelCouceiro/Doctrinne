@@ -9,7 +9,7 @@ Encoding: UTF-8
 Maintainer: Karel Couceiro <Karel.Couceiro@gmail.com>
 Description: This package is intended to analyze display a dataset consisting of car accidents from the US National Highway Traffic Safety Administration?s Fatality Analysis Reporting System.
 License: GPL
-URL: https://github.com/KarelCouceiro/Directive
+URL: https://github.com/KarelCouceiro/Doctrinne
 RoxygenNote: 6.0.1
 Depends: R (>= 2.10)
 Suggests: testthat,
