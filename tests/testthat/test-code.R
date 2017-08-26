@@ -1,8 +1,8 @@
 
-suppressMessages(library(testthat, lib.loc="~/R/win-library/3.4"))
-suppressMessages(library(magrittr, lib.loc="~/R/win-library/3.4"))
-suppressMessages(library(plyr, lib.loc="~/R/win-library/3.4"))
-suppressMessages(library(tidyr, lib.loc="~/R/win-library/3.4"))
+suppressMessages(library(testthat))
+suppressMessages(library(magrittr))
+suppressMessages(library(plyr))
+suppressMessages(library(tidyr))
 
 fars_read <- function(filename) {
   if(!file.exists(filename))
