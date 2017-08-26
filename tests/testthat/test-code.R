@@ -1,7 +1,7 @@
 
 suppressMessages(library(testthat))
 suppressMessages(library(magrittr))
-suppressMessages(library(plyr))
+suppressMessages(library(dplyr))
 suppressMessages(library(tidyr))
 
 fars_read <- function(filename) {
