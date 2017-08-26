@@ -19,10 +19,10 @@ This package is intended to analyze display a dataset consisting of car accident
 
 ```{r add_functions, results='hide', echo=FALSE, warning = 'false', message = 'false'}
 
-suppressMessages(library(magrittr, lib.loc="~/R/win-library/3.4"))
-suppressMessages(library(dplyr, lib.loc="~/R/win-library/3.4"))
-suppressMessages(library(tidyr,lib.loc="~/R/win-library/3.4"))
-suppressMessages(library(maps,lib.loc="~/R/win-library/3.4"))
+suppressMessages(library(magrittr))
+suppressMessages(library(dplyr))
+suppressMessages(library(tidyr))
+suppressMessages(library(maps))
 
 fars_read <- function(filename) {
   if(!file.exists(filename))
