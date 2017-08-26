@@ -2,7 +2,7 @@
 #'
 #'@source US National Highway Traffic Safety Administration's
 #'
-#'@examples
+#'#'@examples
 #'
 #'\dontrun{accident_2013}
 
