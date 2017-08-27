@@ -24,5 +24,30 @@ https://www.stt.msu.edu/~cui/Groupmeeting/R_package_tutorial.pdf
 https://www.r-bloggers.com/building-a-package-in-rstudio-is-actually-very-easy/
 http://www.geo.uzh.ch/microsite/reproducible_research/post/rr-rstudio-git/
 https://www.r-bloggers.com/rstudio-and-github/
+https://github.com/settings/profile
+http://r-bio.github.io/intro-git-rstudio/
+https://git-scm.com/download/win
+https://stackoverflow.com/questions/17668283/failed-to-add-the-host-to-the-list-of-know-hosts
+https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository
+https://stackoverflow.com/questions/42917131/git-error-could-not-lock-config-file-c-users-old-profile-gitconfig-no-such
+https://stackoverflow.com/questions/10340581/trouble-setting-up-tower-with-my-github-account-error-could-not-lock-config-f/10502155#10502155
+https://github.com/kbroman
+https://stackoverflow.com/questions/26505980/github-permission-denied-ssh-add-agent-has-no-identities
+https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+https://help.github.com/articles/changing-a-remote-s-url/
+https://stackoverflow.com/questions/27714857/ssh-failed-to-add-the-host-to-the-list-of-known-hosts-openshift
+http://www.stat.ucla.edu/~jeroen/mingw-w64/rcpp_check/summary.html
+
+
+
+
+
+
+
+
+
+
+
+
 
 
